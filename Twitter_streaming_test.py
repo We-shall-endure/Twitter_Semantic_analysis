@@ -1,3 +1,6 @@
+#Original Code by Marco Bonanzini
+#Modified by Bassam Salim
+# collects tweets with a given key word and saves them in JSON format
 import tweepy
 from tweepy import OAuthHandler
 import json
@@ -7,10 +10,10 @@ import html
 
 
 #Below values were provided when I registered as a twitter app developer
-consumer_key = '1cVcll7mSkot7ZWE7FHOc75Mu'
-consumer_secret = '8B1rGgAZPijUxijJVnWEDQ9Gyi8I2oHZOKsKXNpfGPqWLasatz'
-access_token = '824048096023748608-KKLyg9MDoq5llxFfOLQhayULvCafvmR'
-access_secret = 'QHIGYT1DtiWFKnXkGiZiPr5784Tpe5lqpmpd3uCd8KADz'
+consumer_key = 'Get your own twitter key'
+consumer_secret = 'Get your own twitter key'
+access_token = 'Get your own twitter key'
+access_secret = 'Get your own twitter key'
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
@@ -34,4 +37,4 @@ class MyListener(StreamListener):
 
 twitter_stream = Stream(auth, MyListener())
 
-list=twitter_stream.filter(track=['@realDonaldTrump']) #looks for tweets with
+list=twitter_stream.filter(track=['@realDonaldTrump']) # look for tweets with given tag.can be any search term 
